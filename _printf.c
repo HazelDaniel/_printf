@@ -34,17 +34,29 @@ int _printf(const char *format, ...)
 		b_print_len = 1, specifier = '\0';
 		curr_char = format[index];
 
-		if (curr_char != '%' && !jump_back)
+		if (jump_back)
+			goto jump_block;
+		if (curr_char != '%')
 		{
 			format_mode = 0;
 		}
-		else if (curr_char == '%' && !jump_back)
+		else
 		{
-			format_start = index;
 			index++;
-			format_mode = 1;
+			if (format[index - 1] && format[index - 1] == '%'
+				&& format[index] == '%')
+			{
+				index --;
+				format_mode = 0;
+			}
+			else
+			{
+				format_mode = 1;
+			}
+			format_start = index;
 		}
-		if (format_mode == 0 || jump_back)
+	jump_block:
+		if (format_mode == 0)
 		{
 			write_bytes(&curr_char, &b_print_len);
 			b_print_len = 1;
@@ -64,7 +76,9 @@ int _printf(const char *format, ...)
 				flags = flags_list[1];
 				if (status[0] == '1')
 				{
-					index++, curr_char = format[index];
+					if (flags)
+						index++,
+					curr_char = format[index];
 					width_list = get_width(va_args, (char *)format, &index);
 					status[0] = width_list[0][0];
 					if (width_list[1])
@@ -77,7 +91,10 @@ int _printf(const char *format, ...)
 				}
 				if (status[0] == '1')
 				{
-					index++, curr_char = format[index];
+					if (width)
+						index++;
+					printf("index for width: %d\n", index);
+					curr_char = format[index];
 					precision_list = get_precision(va_args, (char *)format, &index);
 					status[0] = precision_list[0][0];
 					if (precision_list[1])
@@ -91,10 +108,11 @@ int _printf(const char *format, ...)
 				}
 				if (status[0] == '1')
 				{
-					index++, curr_char = format[index];
+					if (precision)
+						index++,
+					curr_char = format[index];
 					length_list = get_length(va_args, (char *)format, &index);
 					status[0] = length_list[0][0];
-					// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %s\n", flags, width, precision, length_list[1]);
 					if (length_list[1])
 						length = _atoi(length_list[1]);
 				}
@@ -109,6 +127,7 @@ int _printf(const char *format, ...)
 					status[0] = specifier_list[0][0];
 					if (specifier_list[1])
 							specifier = specifier_list[1][0];
+					// printf("\t.specifier: %c.\t\n", specifier);
 				}
 				else
 				{
@@ -119,6 +138,9 @@ int _printf(const char *format, ...)
 				{
 					if (specifier != '\0')
 					{
+						// printf("current index : %d\n", index);
+						// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n",
+						//  flags, width, precision, length, specifier);
 						//this is where you handle the print logic based on specifier provided
 					}
 					else

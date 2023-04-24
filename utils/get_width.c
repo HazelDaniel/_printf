@@ -65,7 +65,8 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 			puts("failed allocation at 57");
 			return (NULL);
 		}
-		--k, --i;
+		if (k > 0)
+			--k, --i;
 
 		for (j = 0; j <= k; j++)
 		{

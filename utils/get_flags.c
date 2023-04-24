@@ -23,7 +23,7 @@ char **get_flags (char *format, int *ind_ptr)
 		{' ', 0},
 		{'\0', 1}
 	};//basically, we are checking for duplicate flags
-	int i = *ind_ptr, j = 0, k = 0;
+	int i = *ind_ptr, j = 0, k = 0, start_index = *ind_ptr;
 
 	result = malloc(2 * sizeof(char *));
 	if (result == NULL)
@@ -58,14 +58,14 @@ char **get_flags (char *format, int *ind_ptr)
 			}
 			i++;
 			j++;
+			free(flags_h_ret);
 		}
 		break;
 	}
 	for (; k < 6; k++)
 		result[1][k] = '\0';
-	*ind_ptr = --i, --j;
+	*ind_ptr = --i, --j;// there may be a bug with index here.
 	result[0][0] = *status;
 	result[0][1] = '\0';
-	free(flags_h_ret);
 	return (result);
 }
