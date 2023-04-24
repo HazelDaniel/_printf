@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 	**precision_list = NULL, **length_list = NULL,
 	**specifier_list = NULL, specifier = '\0';
 	int width, precision, length, i, format_start;
+	int jump_back = 0;
 
 	va_start(va_args, format);
 	while (format[index] != '\0')
@@ -32,17 +33,18 @@ int _printf(const char *format, ...)
 		width = 0, length = 0, precision = 0, i = 0;
 		b_print_len = 1, specifier = '\0';
 		curr_char = format[index];
-		if (curr_char != '%')
+
+		if (curr_char != '%' && !jump_back)
 		{
 			format_mode = 0;
 		}
-		else
+		else if (curr_char == '%' && !jump_back)
 		{
 			format_start = index;
 			index++;
 			format_mode = 1;
 		}
-		if (format_mode == 0)
+		if (format_mode == 0 || jump_back)
 		{
 			write_bytes(&curr_char, &b_print_len);
 			b_print_len = 1;
@@ -117,13 +119,13 @@ int _printf(const char *format, ...)
 				{
 					if (specifier != '\0')
 					{
-						// printf(" the current index : %d\n", index);
-						// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n", flags, width, precision, length, specifier);
+						//this is where you handle the print logic based on specifier provided
 					}
 					else
 					{
-						index = format_start;
+						index = format_start - 1;
 						format_mode = 0;
+						jump_back = 1;
 					}
 					format_mode = 0;
 				}
