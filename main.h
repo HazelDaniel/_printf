@@ -21,6 +21,7 @@ typedef struct
 } flag_t;
 int *is_flag(char c,flag_t hash_addr[]);
 int is_digit(char c);
+int is_print(char c);
 int write_bytes(char *bytes, int *end_addr);
 char **get_flags (char *format, int *ind_ptr);
 char **get_width (va_list va_args, char *format, int *ind_ptr);

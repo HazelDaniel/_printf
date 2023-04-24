@@ -22,6 +22,11 @@ int *is_flag(char c,flag_t hash_addr[])
 		{
 			flags_ret[0] = 1;
 			first_index = i;
+			break;
+		}
+		else
+		{
+			flags_ret[0] = 0;
 		}
 		i++;
 	}

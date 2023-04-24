@@ -19,18 +19,18 @@
 int _printf(const char *format, ...)
 {
 	va_list va_args;
-	int index, format_mode, printed_chars, b_print_len = 1;
+	int index = 0, format_mode = 0, printed_chars, b_print_len;
 	char status[1] = "1", curr_char;
-	char* flags = NULL, **flags_list = NULL, **width_list,
+	char* flags = NULL, **flags_list = NULL, **width_list = NULL,
 	**precision_list = NULL, **length_list = NULL,
 	**specifier_list = NULL, specifier = '\0';
-	int width, precision, length, i, k;
+	int width, precision, length, i, format_start;
 
 	va_start(va_args, format);
 	while (format[index] != '\0')
 	{
-		width = 0, length = 0, precision = 0, i = 0, k = 0,
-		specifier = '\0';
+		width = 0, length = 0, precision = 0, i = 0;
+		b_print_len = 1, specifier = '\0';
 		curr_char = format[index];
 		if (curr_char != '%')
 		{
@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			format_start = index;
 			index++;
 			format_mode = 1;
 		}
@@ -54,7 +55,6 @@ int _printf(const char *format, ...)
 				flags_list = get_flags((char *)format, &index);
 				if (flags_list == NULL)
 				{
-					free(flags_list);
 					status[0] = '0';
 					return (-1);
 				}
@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					format_mode = '0';
+					format_mode = 0;
 					break;
 				}
 				if (status[0] == '1')
@@ -84,7 +84,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					format_mode = '0';
+					format_mode = 0;
 					break;
 				}
 				if (status[0] == '1')
@@ -98,7 +98,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					format_mode = '0';
+					format_mode = 0;
 					break;
 				}
 				if (status[0] == '1')
@@ -107,27 +107,46 @@ int _printf(const char *format, ...)
 					status[0] = specifier_list[0][0];
 					if (specifier_list[1])
 							specifier = specifier_list[1][0];
-					printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n", flags, width, precision, length, specifier);
 				}
 				else
 				{
-					format_mode = '0';
+					format_mode = 0;
 					break;
 				}
-				if (status[0] == '1' && specifier != '\0')
+				if (status[0] == '1')
 				{
-					format_mode = '0';
+					if (specifier != '\0')
+					{
+						// printf(" the current index : %d\n", index);
+						// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n", flags, width, precision, length, specifier);
+					}
+					else
+					{
+						index = format_start;
+						format_mode = 0;
+					}
+					format_mode = 0;
 				}
 			}
+			// free(flags_list[0]);
+			// free(flags_list[1]);
+			free(flags_list);
+			// free(width_list[0]);
+			// free(width_list[1]);
+			free(width_list);
+			// free(precision_list[0]);
+			// free(precision_list[1]);
+			free(precision_list);
+			// free(length_list[0]);
+			// free(length_list[1]);
+			free(length_list);
+			// free(specifier_list[0]);
+			// free(specifier_list[1]);
+			free(specifier_list);
 		}
 		index++;
 	}
 	va_end(va_args);
 
-	free(flags_list);
-	free(width_list);
-	free(precision_list);
-	free(length_list);
-	free(specifier_list);
 	return (0);
 }

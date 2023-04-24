@@ -25,7 +25,6 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 	result[0] = malloc(2 * sizeof(char));
 	if (result[0] == NULL)
 	{
-		free(result);
 		*status = '0';
 		return (NULL);
 	}
@@ -41,7 +40,6 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 		result[1] = malloc((_strlen(width_str) + 1) * sizeof(char));
 		if (result[1] == NULL)
 		{
-			free(result);
 			*status = '0';
 			return (NULL);
 		}
@@ -64,7 +62,6 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 		if (result[1] == NULL)
 		{
 			*status = '0';
-			free(result);
 			puts("failed allocation at 57");
 			return (NULL);
 		}

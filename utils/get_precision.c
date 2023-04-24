@@ -25,7 +25,6 @@ char **get_precision (va_list va_args, char *format, int *ind_ptr)
 	result[0] = malloc(2 * sizeof(char));
 	if (result[0] == NULL)
 	{
-		free(result);
 		*status = '0';
 		return (NULL);
 	}
@@ -53,7 +52,6 @@ char **get_precision (va_list va_args, char *format, int *ind_ptr)
 		result[1] = malloc((_strlen(precision_str) + 1) * sizeof(char));
 		if (result[1] == NULL)
 		{
-			free(result);
 			*status = '0';
 			return (NULL);
 		}
@@ -76,7 +74,6 @@ char **get_precision (va_list va_args, char *format, int *ind_ptr)
 		if (result[1] == NULL)
 		{
 			*status = '0';
-			free(result);
 			return (NULL);
 		}
 		--k, --i;

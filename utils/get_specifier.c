@@ -23,7 +23,6 @@ char **get_specifier (va_list va_args, char *format, int *ind_ptr)
 	result[1] = malloc(2 * sizeof(char));
 	if (result[1] == NULL)
 	{
-		free(result);
 		*status = '0';
 		return (NULL);
 	}

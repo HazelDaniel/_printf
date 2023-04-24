@@ -34,7 +34,6 @@ char **get_flags (char *format, int *ind_ptr)
 	{
 		free(result[0]);
 		free(result[1]);
-		free(result);
 		*status = '0';
 		return (NULL);
 	}
@@ -51,7 +50,7 @@ char **get_flags (char *format, int *ind_ptr)
 			}
 			flag_bool = flags_h_ret[0];
 			flag_index = flags_h_ret[1];
-			if (!flags_hash[flag_index].found)
+			if ((!flags_hash[flag_index].found))
 			{
 				flags_hash[flag_index].found = 1;
 				result[1][k] = format[i];
@@ -64,7 +63,7 @@ char **get_flags (char *format, int *ind_ptr)
 	}
 	for (; k < 6; k++)
 		result[1][k] = '\0';
-	*ind_ptr = --i;
+	*ind_ptr = --i, --j;
 	result[0][0] = *status;
 	result[0][1] = '\0';
 	free(flags_h_ret);
