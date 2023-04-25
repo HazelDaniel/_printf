@@ -13,6 +13,6 @@ int write_bytes(char *bytes, int *end_addr)
 	
 	if (temp > 0)
 		write(1, bytes, *end_addr);
-	*end_addr = 0;
+	*end_addr = temp;
 	return (temp);
 }

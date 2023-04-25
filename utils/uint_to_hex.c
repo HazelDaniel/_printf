@@ -9,7 +9,7 @@
  * case the hexadecimal will be returned
  * Return: char *
  **/
-char *uint_to_hex(unsigned long int dig, char x_case)
+char *uint_to_hex(unsigned long long int dig, char x_case)
 {
 	int i = 0, j, ascii_offset, rem;
 	char *tmp_str = NULL, x_store[16];

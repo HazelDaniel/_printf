@@ -7,7 +7,7 @@
  * @dig: the integer
  * Return: char *
  **/
-char *uint_to_bin(unsigned int dig)
+char *uint_to_bin(unsigned long long int dig)
 {
 	int i = 0;
 	unsigned int a[32], sum = 0, max = 2147483648, s_index;

@@ -3,7 +3,7 @@
 int handle_print(va_list va_args, int index, char *flag,
 	 int width, int precision, int length, char specifier)
 {
-	int i = 0, ind_tmp = index;
+	int i = 0, ind_tmp = index, pr_len = 0;
 	spec_t opts[] = {
 		{'s', print_string},{'d', print_int},
 		{'i', print_int}, {'b', print_bin},
@@ -14,8 +14,10 @@ int handle_print(va_list va_args, int index, char *flag,
 	};
 
 	for (; opts[i].spec != '\0'; i++)
+	{
 		if (opts[i].spec == specifier)
-			opts[i].fn(va_args, index, flag, width, precision, length, specifier);
+			pr_len += opts[i].fn(va_args, index, flag, width, precision, length, specifier);
+	}
 
-	return (0);
+	return (pr_len);
 }

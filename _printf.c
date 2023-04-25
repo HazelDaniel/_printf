@@ -2,28 +2,26 @@
 #include <stdio.h>
 #include "utils/uint_to_bin.c"
 #include "utils/uint_to_hex.c"
-#include "utils/dig_count.c"
-#include "utils/itoa.c"
-#include "utils/itoc.c"
-#include "utils/is_flag.c"
+#include "utils/uint_to_octal.c"
 #include "utils/get_flags.c"
 #include "utils/_strlen.c"
 #include "utils/write_bytes.c"
 #include "utils/get_width.c"
 #include "utils/get_precision.c"
-#include "utils/is_digit.c"
-#include "utils/atoi.c"
 #include "utils/get_length.c"
 #include "utils/get_specifier.c"
 #include "utils/handle_print.c"
 #include "utils/f_printers1.c"
 #include "utils/f_printers2.c"
 #include "utils/f_printers3.c"
+#include "utils/field_utils.c"
+#include "utils/cast_utils.c"
+#include "utils/utils.c"
 
 int _printf(const char *format, ...)
 {
 	va_list va_args;
-	int index = 0, format_mode = 0, printed_chars, b_print_len;
+	int index = 0, format_mode = 0, printed_chars = 0, b_print_len;
 	char status[1] = "1", curr_char;
 	char* flags = NULL, **flags_list = NULL, **width_list = NULL,
 	**precision_list = NULL, **length_list = NULL,
@@ -64,7 +62,7 @@ int _printf(const char *format, ...)
 		{
 			write_bytes(&curr_char, &b_print_len);
 			b_print_len = 1;
-			printed_chars++;
+			printed_chars += b_print_len;
 		}
 		else
 		{
@@ -142,7 +140,7 @@ int _printf(const char *format, ...)
 				{
 					if (specifier != '\0')
 					{
-							handle_print(va_args, index, flags, width, precision, length, specifier);
+							printed_chars += handle_print(va_args, index, flags, width, precision, length, specifier);
 						// printf("current index : %d\n", index);
 						// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n",
 						//  flags, width, precision, length, specifier);
@@ -177,5 +175,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(va_args);
 
-	return (0);
+	return (printed_chars);
 }
