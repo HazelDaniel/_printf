@@ -15,6 +15,10 @@
 #include "utils/atoi.c"
 #include "utils/get_length.c"
 #include "utils/get_specifier.c"
+#include "utils/handle_print.c"
+#include "utils/f_printers1.c"
+#include "utils/f_printers2.c"
+#include "utils/f_printers3.c"
 
 int _printf(const char *format, ...)
 {
@@ -93,7 +97,7 @@ int _printf(const char *format, ...)
 				{
 					if (width)
 						index++;
-					printf("index for width: %d\n", index);
+					// printf("index for width: %d\n", index);
 					curr_char = format[index];
 					precision_list = get_precision(va_args, (char *)format, &index);
 					status[0] = precision_list[0][0];
@@ -138,6 +142,7 @@ int _printf(const char *format, ...)
 				{
 					if (specifier != '\0')
 					{
+							handle_print(va_args, index, flags, width, precision, length, specifier);
 						// printf("current index : %d\n", index);
 						// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n",
 						//  flags, width, precision, length, specifier);
