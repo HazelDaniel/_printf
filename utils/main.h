@@ -12,6 +12,7 @@ int ctoi(char c);
 int is_print(char c);
 char itoc(int i);
 int _strlen(char *c);
+int _max(int a, int b);
 char *uint_to_bin(unsigned long long int dig);
 char *uint_to_hex(unsigned long long int dig, char x_case);
 char *prepend_x(unsigned long long int dig, char x_case);
@@ -20,12 +21,50 @@ int dig_count(unsigned long long int dig);
 unsigned long long int get_abs(long long int val);
 char *itoa(unsigned long long int i);
 int _atoi(char *s);
+char *non_print_x(long int num);
 char *rev_str(char *str);
 typedef struct
 {
 	char flag;
 	int found;
 } flag_t;
+typedef struct
+{
+	int is_signed;
+	int has_flags;
+	int has_width;
+	int has_precision;
+	int has_length;
+	int (*fn)(char *flags, char *buffer, int, int, int);
+} fm_int_t;
+typedef struct
+{
+	int has_flags;
+	int has_width;
+	int has_precision;
+	int (*fn)(char *flags, char *buffer, int, int);
+} fm_str_t;
+typedef struct
+{
+	int has_minus_flag;
+	int has_width;
+	int has_length;
+	int (*fn)(char *buffer, int, int);
+} fm_char_t;
+typedef struct
+{
+	int has_minus_flag;
+	int has_width;
+	int has_precision;
+	int has_length;
+	int (*fn)(char *buffer, int, int, int);
+} fm_hex_t;
+typedef struct
+{
+	int has_minus_flag;
+	int has_width;
+	int (*fn)(char *buffer, int);
+} fm_addr_t;
 struct spec_n_fn
 {
 	char spec;

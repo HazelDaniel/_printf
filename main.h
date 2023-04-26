@@ -12,8 +12,10 @@ int _printf(const char *format, ...);
 int dig_count(unsigned long long int dig);
 unsigned long long int get_abs(long long int val);
 int _strlen(char *c);
+int _max(int a, int b);
 char *itoa(unsigned long long int i);
 int _atoi(char *s);
+char *non_print_x(long int num);
 char itoc(int i);
 char *rev_str(char *str);
 char *uint_to_bin(unsigned long long int x);
@@ -25,6 +27,43 @@ typedef struct
 	char flag;
 	int found;
 } flag_t;
+typedef struct
+{
+	int is_signed;
+	int has_flags;
+	int has_width;
+	int has_precision;
+	int has_length;
+	int (*fn)(char *flags, char *buffer, int, int, int);
+} fm_int_t;
+typedef struct
+{
+	int has_flags;
+	int has_width;
+	int has_precision;
+	int (*fn)(char *flags, char *buffer, int, int);
+} fm_str_t;
+typedef struct
+{
+	int has_minus_flag;
+	int has_width;
+	int has_length;
+	int (*fn)(char *buffer, int, int);
+} fm_char_t;
+typedef struct
+{
+	int has_minus_flag;
+	int has_width;
+	int has_precision;
+	int has_length;
+	int (*fn)(char *buffer, int, int, int);
+} fm_hex_t;
+typedef struct
+{
+	int has_minus_flag;
+	int has_width;
+	int (*fn)(char *buffer, int);
+} fm_addr_t;
 struct spec_n_fn
 {
 	char spec;

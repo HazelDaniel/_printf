@@ -7,10 +7,10 @@ int print_bin(va_list va_args, int index, char *flag,
 	char *flags_net = get_important_flags(flag), *pad_string = NULL,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
+
 	next = va_arg(va_args, long long int);
 	next = get_abs(next);
-	p_buffer = uint_to_bin(next);
-	b_len = _strlen(p_buffer);
+	p_buffer = uint_to_bin(next); b_len = _strlen(p_buffer);
 	write_bytes(p_buffer, (int *)&b_len);
 	free(p_buffer);
 	return (b_len);
@@ -23,7 +23,9 @@ int print_int(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
+	fm_int_t int_formatted;
 
+	// printf("flags: %d\t, width : %d\t, precision : %d\t, length : %d\t, specifier : %c\n", _strlen(flags_net), width, precision, length, specifier);
 	if (length)
 	{
 		switch (length)
@@ -79,6 +81,7 @@ int print_x_upper(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
+	fm_hex_t hex_formatted;
 
 	if (length)
 	{
@@ -115,6 +118,7 @@ int print_pointer(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
+	fm_addr_t addr_formatted;
 
 	if (length)
 	{

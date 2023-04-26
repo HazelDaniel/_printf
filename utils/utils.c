@@ -241,3 +241,41 @@ char *prepend_x(unsigned long long dig, char x_case)
 
 	return (res_hex);
 }
+int _max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+char *non_print_x(long int num)
+{
+	char *res_hex = NULL, *ret_hex = NULL;
+	int res_len, i = 0;
+
+	res_hex = uint_to_hex(num, 'X');
+	if (res_hex == NULL)
+		return (res_hex);
+	res_len = _strlen(res_hex);
+	if (res_len == 1)
+	{
+		ret_hex = malloc(3 * sizeof(char));
+		if (ret_hex == NULL)
+			return (ret_hex);
+		ret_hex[0] = '0';
+		ret_hex[1] = res_hex[0];
+		ret_hex[2] = '\0';
+	}
+	else
+	{
+		ret_hex = malloc((res_len + 1) * sizeof(char));
+		if (ret_hex == NULL)
+			return (ret_hex);
+		for (; res_hex[i] != '\0'; i++)
+			ret_hex[i] = res_hex[i];
+		ret_hex[res_len] = '\0';
+	}
+
+	free(res_hex);
+	return (ret_hex);
+}

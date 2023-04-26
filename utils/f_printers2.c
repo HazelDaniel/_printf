@@ -5,8 +5,10 @@
 int print_non_print(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
-	char *next, *np_str = NULL;
-	int stop = 1, i = 0, k = 0, len, b_len;
+	char *next, *np_str = NULL, buffer[1024] = "",
+	*hex_tmp = NULL, *meg_str[1024];
+	int stop = 1, i = 0, ind = 0, k = 0, len, b_len,
+	free_ind = 0;
 
 	next = va_arg(va_args, char *);
 	len = _strlen(next);
@@ -15,13 +17,17 @@ int print_non_print(va_list va_args, int index, char *flag,
 	{
 		if (!is_print(next[i]))
 		{
-			np_str = itoa((int)next[i]);
+			np_str = non_print_x((int)next[i]);
+			if (np_str == NULL)
+				for (free_ind = 0; meg_str[free_ind];)
+					free(meg_str[free_ind++]);
 			stop = 2;
 			write(1, "\\x", stop);
 			b_len = _strlen(np_str);
 			write(1, np_str, b_len);
 			k += 2 + b_len;
-			free(np_str);
+			meg_str[ind] = np_str;
+			ind++;
 		}
 		else
 		{
@@ -30,11 +36,11 @@ int print_non_print(va_list va_args, int index, char *flag,
 			k += 1;
 		}
 	}
+	// for (; ind >= 0;)
+	// 	free(meg_str[ind--]);
+
 	return (k);
 }
-/*
-	Edge case - i don't know control characters are considered non printable
-*/
 
 int print_unsigned(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
@@ -43,6 +49,7 @@ int print_unsigned(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
+	fm_int_t int_formatted;
 
 	if (length)
 	{
@@ -77,6 +84,8 @@ int print_octal(va_list va_args, int index, char *flag,
 {
 	char *str_next = NULL;
 	long int next, b_len;
+	fm_int_t int_formatted;
+
 	if (length)
 	{
 		switch (length)

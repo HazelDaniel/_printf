@@ -9,6 +9,7 @@ int print_x_lower(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
+	fm_hex_t hex_formatted;
 
 	if (length)
 	{
@@ -43,6 +44,7 @@ int print_char(va_list va_args, int index, char *flag,
 {
 	char next;
 	int b_len = 1;
+	fm_char_t char_formatted;
 
 	next = va_arg(va_args, int);
 	write(1, &next, b_len);
@@ -55,6 +57,7 @@ int print_string(va_list va_args, int index, char *flag,
 {
 	char *next;
 	int b_len;
+	fm_str_t str_formatted;
 
 	next = va_arg(va_args, char *);
 	b_len = _strlen(next);
@@ -89,7 +92,6 @@ int print_rot13(va_list va_args, int index, char *flag,
 	r13_tmp = malloc((len + 1) * sizeof(char));
 	if (r13_tmp == NULL)
 		return (-1);
-	r13_tmp[len] = '\0';
 	for (; i < len; i++)
 	{
 		for (j = 0; j < 52; j++)
@@ -101,6 +103,8 @@ int print_rot13(va_list va_args, int index, char *flag,
 			}
 		}
 	}
-	write_bytes(r13_tmp, (int *)&len);
+	r13_tmp[len] = '\0';
+	i = len - 1;
+	write_bytes(r13_tmp, (int *)&i);
 	return (len);
 }

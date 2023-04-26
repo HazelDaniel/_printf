@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <limits.h>
+#include "utils/spec_write_handlers.c"
 
 int main(void)
 {
@@ -10,8 +11,9 @@ int main(void)
 	puts("..........................................");
 	_printf("C. t%%", 55, "string template");
 	puts("..........................................");
-	_printf("D. i%5.2hd %-*.3mlve everybody\n", 55, "string template");
+	_printf("D. i%5.22hd %-*.3mlve everybody\n", 55, "string template");
 	_printf("E");
+	printf("F. %03.3d\n", 88);
 		int len;
     int len2;
     unsigned int ui;
@@ -24,7 +26,7 @@ int main(void)
 		printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
     _printf("Negative:[%d]\n", -762534);
-    // printf("Negative:[%d]\n", -762534);
+    printf("char:[%-3p]\n", (void *)1356);
     _printf("Unsigned:[%lu]\n", (unsigned int)-3);
     printf("upper hex:[%X]\n", -3);
     _printf("Unsigned octal:[%o]\n", ui);
@@ -34,16 +36,19 @@ int main(void)
     _printf("Character:[%c]\n", 'H');
     // printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
-    _printf("non printable:[%S]\n", "I am a \n\tstring !");
+    _printf("non printable:[%S]\n", "I am a \n\tstring\a\b !");
     // printf("String:[%s]\n", "I am a string !");
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
-    _printf("binary:[%b]\n", 5);
+    _printf("binary:[%-# 08.3lb]\n", 5);
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     // printf("Len:[%d]\n", len2);
     _printf("reversed:[%r]\n", "hello world");
     _printf("Rot13:[%R]\n", "hello world");
+		printf("% 13.7d\n", -888888);
+		// printf("%-10.11d\n", -888888);
+		// fm_write_int("#-", "-888888", 10, 11);
 	return (0);
 }
