@@ -38,7 +38,7 @@ typedef struct
 } fm_int_t;
 typedef struct
 {
-	int has_flags;
+	int has_minus_flag;
 	int has_width;
 	int has_precision;
 	int (*fn)(char *flags, char *buffer, int, int);
@@ -73,6 +73,7 @@ typedef struct spec_n_fn spec_t;
 int *is_flag(char c,flag_t hash_addr[]);
 int is_digit(char c);
 int is_print(char c);
+int is_alpha(char c);
 int in_str (char c, char *str);
 int write_bytes(char *bytes, int *end_addr);
 char **get_flags (char *format, int *ind_ptr);
@@ -112,4 +113,15 @@ long int cast_int_to_size(long int value, int size);
 long double cast_float_to_size(long double value, int size);
 /*FIELD UTILS*/
 char *get_important_flags(char *flags);
+/* SPECIFIER-BASED WRITE HANDLERS */
+int fm_write_int(char *flags, char *buffer, int width,
+	int precision, int is_octal, int is_hex);
+int fm_write_str(char *flags, char *buffer, int width,
+	int precision);
+int fm_write_char(char *flags, char *buffer, int width);
+int fm_write_hex(char *flags, char *buffer, int width,
+	int precision);
+int fm_write_octal(char *flags, char *buffer, int width,
+	int precision);
+int fm_write_addr(char *flags, char *buffer, int width);
 #endif/*___MAIN__*/

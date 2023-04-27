@@ -10,6 +10,7 @@
 #define LONG_DOUBLE_SIZE (16)
 int ctoi(char c);
 int is_print(char c);
+int is_alpha(char c);
 char itoc(int i);
 int _strlen(char *c);
 int _max(int a, int b);
@@ -39,7 +40,7 @@ typedef struct
 } fm_int_t;
 typedef struct
 {
-	int has_flags;
+	int has_minus_flag;
 	int has_width;
 	int has_precision;
 	int (*fn)(char *flags, char *buffer, int, int);
@@ -113,4 +114,15 @@ long int cast_int_to_size(long int value, int size);
 long double cast_float_to_size(long double value, int size);
 /*FIELD UTILS*/
 char *get_important_flags(char *flags);
+/* SPECIFIER-BASED WRITE HANDLERS */
+int fm_write_int(char *flags, char *buffer, int width,
+	int precision, int is_octal, int is_hex);
+int fm_write_str(char *flags, char *buffer, int width,
+	int precision);
+int fm_write_char(char *flags, char *buffer, int width);
+int fm_write_hex(char *flags, char *buffer, int width,
+	int precision);
+int fm_write_octal(char *flags, char *buffer, int width,
+	int precision);
+int fm_write_addr(char *flags, char *buffer, int width);
 #endif/*___MAIN__*/

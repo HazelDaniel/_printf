@@ -9,10 +9,10 @@ int main(void)
 	puts("..........................................");
 	_printf("B. i%#-0 +5.2hd %-*.3dlve everybody\n", 55, 5, 100);
 	puts("..........................................");
-	_printf("C. t%%", 55, "string template");
+	_printf("C. t%%\n", 55, "string template");
 	puts("..........................................");
-	_printf("D. i%5.22hd %-*.3mlve everybody\n", 55, "string template");
-	_printf("E");
+	_printf("D. i%-+0-5.22hd %-*.3mlve everybody\n", 55, "string template");
+	_printf("E\n");
 	printf("F. %03.3d\n", 88);
 		int len;
     int len2;
@@ -46,9 +46,12 @@ int main(void)
     _printf("Len:[%d]\n", len);
     // printf("Len:[%d]\n", len2);
     _printf("reversed:[%r]\n", "hello world");
-    _printf("Rot13:[%R]\n", "hello world");
-		printf("% 13.7d\n", -888888);
+    _printf("Rot13:[%R]\n", "hello, world");
+		// printf("%13.1s\n", "hello, world");
+			int ch = 9;
+		 printf("%-10p\n", addr);
+	// printf("%#-10.0o\n", ch);
+		fm_write_addr("-#", "0x7ffe637541f0", 10);
 		// printf("%-10.11d\n", -888888);
-		// fm_write_int("#-", "-888888", 10, 11);
 	return (0);
 }

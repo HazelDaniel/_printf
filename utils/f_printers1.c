@@ -23,9 +23,7 @@ int print_int(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
-	fm_int_t int_formatted;
 
-	// printf("flags: %d\t, width : %d\t, precision : %d\t, length : %d\t, specifier : %c\n", _strlen(flags_net), width, precision, length, specifier);
 	if (length)
 	{
 		switch (length)
@@ -59,18 +57,13 @@ int print_int(va_list va_args, int index, char *flag,
 		p_buffer[_strlen(str_next)] = '\0';
 		for (; str_next[j] != '\0'; )
 			p_buffer[++k] = str_next[j++];
-		b_len = _strlen(p_buffer);
-		write_bytes(p_buffer, (int *)&b_len);
+		b_len = fm_write_int(flags_net, p_buffer, width, precision, 0, 0);
 	}
 	else
 	{
-		b_len = _strlen(str_next);
-		write_bytes(str_next, (int *)&b_len);
+		b_len = fm_write_int(flags_net, str_next, width, precision, 0, 0);
 	}
 	
-	free(flags_net);
-	free(p_buffer);
-	free(str_next);
 	return (b_len);
 }
 
@@ -81,7 +74,6 @@ int print_x_upper(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
-	fm_hex_t hex_formatted;
 
 	if (length)
 	{
@@ -102,12 +94,8 @@ int print_x_upper(va_list va_args, int index, char *flag,
 	str_next = uint_to_hex(next, 'X');
 	if (str_next == NULL)
 		return (-1);
-	b_len = _strlen(str_next);
-	write_bytes(str_next, (int *)&b_len);
+	b_len = fm_write_hex(flags_net, str_next, width, precision);
 	
-	free(flags_net);
-	free(p_buffer);
-	free(str_next);
 	return (b_len);
 }
 
@@ -118,7 +106,6 @@ int print_pointer(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
-	fm_addr_t addr_formatted;
 
 	if (length)
 	{
@@ -139,12 +126,9 @@ int print_pointer(va_list va_args, int index, char *flag,
 	str_next = prepend_x(next, 'x');
 	if (str_next == NULL)
 		return (-1);
-	b_len = _strlen(str_next);
-	write_bytes(str_next, (int *)&b_len);
+
+	b_len = fm_write_addr(flags_net, str_next, width);
 	
-	free(flags_net);
-	free(p_buffer);
-	free(str_next);
 	return (b_len);
 }
 /*

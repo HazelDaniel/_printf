@@ -62,6 +62,19 @@ int is_print(char c)
 	return (0);
 }
 /**
+ * is_alpha - a function that checks if a
+ * character is printable
+ * @c: the character parameter
+ * Return: 1 or 0
+ **/
+int is_alpha(char c)
+{
+	if ((c <= 90 && c >= 65) ||
+		(c >= 97 && c <= 122))
+		return (1);
+	return (0);
+}
+/**
  * ctoi - a function that converts
  * a character to a number
  * @c: the character

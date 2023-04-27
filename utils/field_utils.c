@@ -27,7 +27,6 @@ char *get_important_flags(char *flags)
 				else
 				{
 					important[k++] = flags[i];
-
 				}
 			}
 		}
@@ -36,9 +35,7 @@ char *get_important_flags(char *flags)
 	if (res_str == NULL)
 		return (res_str);
 	for (j = 0; j < k; j++)
-	{
 		res_str[j] = important[j];
-	}
 
 	return (res_str);
 }

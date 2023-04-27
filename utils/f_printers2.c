@@ -36,8 +36,8 @@ int print_non_print(va_list va_args, int index, char *flag,
 			k += 1;
 		}
 	}
-	// for (; ind >= 0;)
-	// 	free(meg_str[ind--]);
+	for (; ind >= 0;)
+		free(meg_str[ind--]);
 
 	return (k);
 }
@@ -70,19 +70,15 @@ int print_unsigned(va_list va_args, int index, char *flag,
 	str_next = itoa(get_abs(next));
 	if (str_next == NULL)
 		return (-1);
-	b_len = _strlen(str_next);
-	write_bytes(str_next, (int *)&b_len);
-	
-	free(flags_net);
-	free(p_buffer);
-	free(str_next);
+	b_len = fm_write_int(flags_net, str_next, width, precision, 0, 0);
+
 	return (b_len);
 }
 
 int print_octal(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
-	char *str_next = NULL;
+	char *str_next = NULL, *flags_net = get_important_flags(flag);
 	long int next, b_len;
 	fm_int_t int_formatted;
 
@@ -103,8 +99,6 @@ int print_octal(va_list va_args, int index, char *flag,
 		next = va_arg(va_args, unsigned long int);
 	}
 	str_next = uint_to_octal(next);
-	b_len = _strlen(str_next);
-	write_bytes(str_next, (int *)&b_len);
-	free(str_next);
+	b_len = fm_write_int(flags_net, str_next, width, precision, 1, 0);
 	return (b_len);
 }

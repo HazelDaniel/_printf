@@ -9,7 +9,6 @@ int print_x_lower(va_list va_args, int index, char *flag,
 	*p_buffer = NULL, *str_next = NULL;
 	long int next, b_len;
 	int is_negative = 0, i, j = 0, k = 0;
-	fm_hex_t hex_formatted;
 
 	if (length)
 	{
@@ -30,38 +29,47 @@ int print_x_lower(va_list va_args, int index, char *flag,
 	str_next = uint_to_hex(next, 'x');
 	if (str_next == NULL)
 		return (-1);
-	b_len = _strlen(str_next);
-	write_bytes(str_next, (int *)&b_len);
+	b_len = fm_write_hex(flags_net, str_next, width, precision);
 	
-	free(flags_net);
-	free(p_buffer);
-	free(str_next);
 	return (b_len);
 }
 
 int print_char(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
-	char next;
+	char next, *next_buffer = NULL,
+	*flags_net = get_important_flags(flag);
 	int b_len = 1;
-	fm_char_t char_formatted;
 
 	next = va_arg(va_args, int);
-	write(1, &next, b_len);
-	b_len = 1;
+	next_buffer = malloc(2 * sizeof(char));
+	if (next_buffer == NULL)
+		return (-1);
+	next_buffer[1] = '\0';
+	next_buffer[0] = next;
+	b_len = fm_write_char(flags_net, next_buffer, width);
+
 	return (b_len);
 }
 
 int print_string(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
-	char *next;
-	int b_len;
-	fm_str_t str_formatted;
+	char *next, *flags_net = get_important_flags(flag),
+	*w_buffer = NULL;
+	int b_len, i = 0;
 
 	next = va_arg(va_args, char *);
 	b_len = _strlen(next);
-	write_bytes(next, (int *)&b_len);
+	w_buffer = malloc((b_len + 1) * sizeof(char));
+	if (w_buffer == NULL)
+		return (-1);
+	
+	for (; next[i] != '\0'; i++)
+		w_buffer[i] = next[i];
+	w_buffer[i] = '\0';
+
+	b_len = fm_write_str(flags_net, next, width, precision);
 	return (b_len);
 }
 
@@ -101,10 +109,14 @@ int print_rot13(va_list va_args, int index, char *flag,
 				r13_tmp[k] = map[j];
 				k++;
 			}
+			else if (!is_alpha(next[i]))
+			{
+				r13_tmp[k++] = next[i++];
+			}
 		}
 	}
 	r13_tmp[len] = '\0';
-	i = len - 1;
+	i = len;
 	write_bytes(r13_tmp, (int *)&i);
 	return (len);
 }
