@@ -45,19 +45,24 @@ int _printf(const char *format, ...)
 		else
 		{
 			index++;
-			if (format[index - 1] && format[index - 1] == '%'
+			if (index > 0 && format[index - 1] == '%'
 				&& format[index] == '%')
 			{
 				index --;
-				format_mode = 0;
 			}
-			else
-			{
-				format_mode = 1;
-			}
+			format_mode = 1;
 			format_start = index;
 		}
 	jump_block:
+		if (jump_back && index > 0 && format[index - 1] == '%')
+		{
+			index--;
+			b_print_len = 1;
+			write_bytes((char *)&(format[index]), &b_print_len);
+			b_print_len = 1;
+			printed_chars += b_print_len;
+			index++;
+		}
 		if (format_mode == 0)
 		{
 			write_bytes(&curr_char, &b_print_len);
@@ -144,11 +149,10 @@ int _printf(const char *format, ...)
 						// printf("current index : %d\n", index);
 						// printf("flags: %s\nwidth: %d\nprecision: %d\nlength: %d\nspecifier: %c\n",
 						//  flags, width, precision, length, specifier);
-						//this is where you handle the print logic based on specifier provided
 					}
 					else
 					{
-						index = format_start - 1;
+						index = format_start > 0 ? format_start - 1 : format_start;
 						format_mode = 0;
 						jump_back = 1;
 					}

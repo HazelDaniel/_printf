@@ -28,10 +28,12 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 		*status = '0';
 		return (NULL);
 	}
-	if (format[i] == '*')
+	if (format[*ind_ptr] == '*')
 	{
+			// printf("current index : %d\n", *ind_ptr);
 		width = va_arg(va_args, unsigned long);
 		width_str = itoa(width);
+		// printf("width string : %s\n", width_str);
 		if (width_str == NULL)
 		{
 			*status = '0';

@@ -69,7 +69,7 @@ int print_string(va_list va_args, int index, char *flag,
 		w_buffer[i] = next[i];
 	w_buffer[i] = '\0';
 
-	b_len = fm_write_str(flags_net, next, width, precision);
+	b_len = fm_write_str(flags_net, w_buffer, width, precision);
 	return (b_len);
 }
 
