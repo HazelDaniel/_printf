@@ -5,7 +5,7 @@ int handle_print(va_list va_args, int index, char *flag,
 {
 	int i = 0, ind_tmp = index, pr_len = 0;
 	spec_t opts[] = {
-		{'s', print_string},{'d', print_int},
+		{'s', print_string}, {'d', print_int},
 		{'i', print_int}, {'b', print_bin},
 		{'X', print_x_upper}, {'p', print_pointer}, {'S', print_non_print},
 		{'u', print_unsigned}, {'x', print_x_lower},

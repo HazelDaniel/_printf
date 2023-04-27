@@ -15,10 +15,7 @@ char *uint_to_bin(unsigned long long int dig)
 
 	a[0] = (dig / max) % 2;
 	for (i = 1; i < 32; i++)
-	{
-		max /= 2;
-		a[i] = (dig / max) % 2;
-	}
+		max /= 2, a[i] = (dig / max) % 2;
 	for (i = 0; i < 32; i++)
 	{
 		sum += a[i];
@@ -31,9 +28,7 @@ char *uint_to_bin(unsigned long long int dig)
 		}
 	}
 	for (i = 0; s_index < 32; s_index++, i++)
-	{
 		tmp_str[i] = itoc(a[s_index]);
-	}
 	tmp_str[i] = '\0';
 	return (tmp_str);
 }

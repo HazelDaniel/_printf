@@ -1,7 +1,12 @@
 #include "main.h"
-#include <stdio.h>
 
-
+/**
+ * get_important_flags - a function that
+ * removes duplicate flags and return the
+ * ones with higher priority
+ * @flags: the input string containing the flags
+ * Return: char *
+ **/
 char *get_important_flags(char *flags)
 {
 	char order[] = {'#', '+', ' ', '-', '0'};

@@ -10,20 +10,20 @@
  * index
  * Return: char **
  **/
-char **get_length (va_list va_args, char *format, int *ind_ptr)
+char **get_length(va_list va_args, char *format, int *ind_ptr)
 {
-	char *status = "1";
-	char **result = NULL, *length_str;
+	char *status = "1", **result = NULL, *length_str;
+
 	result = malloc(2 * sizeof(char *));
 	if (result == NULL)
 	{
 		*status = '0';
 		return (result);
 	}
-	result[1] = malloc(2 * sizeof(char));
-	if (result[1] == NULL)
+	result[1] = malloc(2 * sizeof(char)), result[0] = malloc(2 * sizeof(char));
+	if (result[1] == NULL || result[0] == NULL)
 	{
-		*status = '0';
+		free(result[0]), free(result[1]), *status = '0';
 		return (NULL);
 	}
 	switch (format[*ind_ptr])
@@ -43,11 +43,13 @@ char **get_length (va_list va_args, char *format, int *ind_ptr)
 			(*ind_ptr)++;
 		break;
 	default:
-		result[0] = "1";
+		result[0][0] = '1';
+		result[0][1] = '\0';
 		result[1] = NULL;
 		return (result);
 	}
-	result[0] = "1";
+	result[0][0] = *status;
+	result[0][1] = '\0';
 	result[1][1] = '\0';
 	return (result);
 }

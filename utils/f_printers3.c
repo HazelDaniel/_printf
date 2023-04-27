@@ -1,7 +1,19 @@
 #include "main.h"
 #include <stdio.h>
 
-
+/**
+  * print_x_lower - a function that formats
+	* an input integer string to it's
+	* lower hex equivalent
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_x_lower(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
@@ -30,10 +42,22 @@ int print_x_lower(va_list va_args, int index, char *flag,
 	if (str_next == NULL)
 		return (-1);
 	b_len = fm_write_hex(flags_net, str_next, width, precision);
-	
+
 	return (b_len);
 }
 
+/**
+  * print_char - a function that prints a formatted
+	* character
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_char(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
@@ -52,6 +76,18 @@ int print_char(va_list va_args, int index, char *flag,
 	return (b_len);
 }
 
+/**
+  * print_string - a function that prints a formatted
+	* string
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_string(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
@@ -64,7 +100,7 @@ int print_string(va_list va_args, int index, char *flag,
 	w_buffer = malloc((b_len + 1) * sizeof(char));
 	if (w_buffer == NULL)
 		return (-1);
-	
+
 	for (; next[i] != '\0'; i++)
 		w_buffer[i] = next[i];
 	w_buffer[i] = '\0';
@@ -73,6 +109,18 @@ int print_string(va_list va_args, int index, char *flag,
 	return (b_len);
 }
 
+/**
+  * print_reverse - a function that formats
+	* a string to it's reversed form
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_reverse(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
@@ -87,6 +135,18 @@ int print_reverse(va_list va_args, int index, char *flag,
 	return (b_len);
 }
 
+/**
+  * print_rot13 - a function that formats a string to
+	* it's rot 13 form
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_rot13(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {

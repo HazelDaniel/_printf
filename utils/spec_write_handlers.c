@@ -1,22 +1,18 @@
 #include "main.h"
-#include <stdio.h>
 
 /* SUB UTILS */
-char flag_sign_or_space(int is_signed, int is_force_spaced, int is_force_signed);
-/*TODO: FREE ALL FLAGS AND BUFFERS PASSED IN THE FUNCTIONS */
+char flag_sign_or_space(int is_signed,
+	int is_force_spaced, int is_force_signed);
 
 int fm_write_int(char *flags, char *buffer, int width,
 	int precision, int is_octal, int is_hex)
 {
 	/* NO SUPPORT FOR HASH FLAGS IN INT */
-	/* use this same function as the underlying for all other integer types
-	 you could pass arguments for specific functionalities (if any)*/
 	int net_len, buff_len, is_justified = in_str('-', flags),
 	is_signed = buffer[0] == '-', is_force_signed = in_str('+', flags),
 	is_force_spaced = in_str(' ', flags),
-	is_force_prefix = in_str('#', flags), print_none = 0;
-	char *zero_pad = NULL, *space_pad = NULL, write_buff[1024] = "",
-	dig_buff[1024] = "";
+	is_force_prefix = in_str('#', flags), print_none = 0; char *zero_pad = NULL,
+	*space_pad = NULL, write_buff[1024] = "", dig_buff[1024] = "";
 	int i = 0, j = 0, s_pad_num, z_pad_num;
 
 	buff_len = _strlen(buffer);
@@ -28,8 +24,6 @@ int fm_write_int(char *flags, char *buffer, int width,
 		is_force_signed = 0;
 		is_force_spaced = 0;
 	}
-	/* this is because we are going to prepend the
-	 * minus sign into another buffer - which is a resulting */
 	if (!precision && buff_len == 1 && buffer[0] == '0'
 		&& !(is_octal || is_hex))
 	{
@@ -47,7 +41,6 @@ int fm_write_int(char *flags, char *buffer, int width,
 			zero_pad[z_pad_num] = '\0';
 			while (i < z_pad_num)
 				zero_pad[i++] = '0';
-			// todo: append result from left using zero pad
 		}
 		if (width > precision)
 		{
@@ -71,57 +64,40 @@ int fm_write_int(char *flags, char *buffer, int width,
 			space_pad[s_pad_num] = '\0';
 			while (j < s_pad_num)
 				space_pad[j++] = ' ';
-			// todo : check for justify flag
 		}
 		i = 0;
 		if (is_force_signed || is_force_spaced || is_signed)
 		{
-			dig_buff[0] = flag_sign_or_space(is_signed, is_force_spaced, is_force_signed);
-			i++;
+			dig_buff[0] = flag_sign_or_space(is_signed,
+				is_force_spaced, is_force_signed), i++;
 		}
 		else
 		{
 			if (is_force_prefix)
 			{
 				if (is_octal && !z_pad_num)
-				{
-					dig_buff[0] = '0';
-					i++;
-				}
+					dig_buff[0] = '0', i++;
 				else if (is_hex && z_pad_num < 2)
-				{
-					dig_buff[0] = '0';
-					dig_buff[1] = 'x';
-					i+=2;
-				}
-
+					dig_buff[0] = '0', dig_buff[1] = 'x', i += 2;
 			}
 		}
 	}
 	else
 	{
 		if (is_signed)
-		{
-			dig_buff[0] = '-';
-			i++;
-		}
+			dig_buff[0] = '-', i++;
 		else if (is_force_spaced)
-		{
-			dig_buff[0] = ' ';
-			i++;
-		}
+			dig_buff[0] = ' ', i++;
 		if (is_force_prefix)
 		{
 			if (is_octal && !z_pad_num)
 			{
-				dig_buff[0] = '0';
-				i++;
+				dig_buff[0] = '0', i++;
 			}
 			else if (is_hex && z_pad_num < 2)
 			{
-				dig_buff[0] = '0';
-				dig_buff[1] = 'x';
-				i+=2;
+				dig_buff[0] = '0', dig_buff[1] = 'x';
+				i += 2;
 			}
 		}
 	}
@@ -146,7 +122,7 @@ int fm_write_int(char *flags, char *buffer, int width,
 			goto no_sp;
 		for (; space_pad[j] != '\0'; i++, j++)
 			write_buff[i] = space_pad[j];
-		no_sp:
+no_sp:
 			;
 	}
 	else
@@ -155,7 +131,7 @@ int fm_write_int(char *flags, char *buffer, int width,
 			goto no_sp1;
 		for (; space_pad[j] != '\0'; i++, j++)
 			write_buff[i] = space_pad[j];
-		no_sp1:
+no_sp1:
 			;
 		for (j = 0; dig_buff[j] != '\0'; j++, i++)
 			write_buff[i] = dig_buff[j];
@@ -165,14 +141,9 @@ int fm_write_int(char *flags, char *buffer, int width,
 no_print:
 	if (print_none == 1)
 	{
-		net_len = 1;
-		write_bytes("\n", &net_len);
+		net_len = 1, write_bytes("\n", &net_len);
 	}
-	free(zero_pad);
-	free(space_pad);
-	free(buffer);
-	free(flags);
-
+	free(zero_pad), free(space_pad), free(buffer), free(flags);
 	return (net_len);
 }
 
@@ -200,7 +171,6 @@ int fm_write_str(char *flags, char *buffer, int width,
 			space_pad[s_pad_num] = '\0';
 			while (j < s_pad_num)
 				space_pad[j++] = ' ';
-			// todo : check for justify flag
 		}
 		i = 0;
 	}
@@ -222,8 +192,8 @@ int fm_write_str(char *flags, char *buffer, int width,
 	}
 	if (precision < buff_len && precision != 0)
 	{
-			for (j = 0; j < precision; i++, j++)
-				dig_buff[i] = buffer[j];
+		for (j = 0; j < precision; i++, j++)
+			dig_buff[i] = buffer[j];
 	}
 	else
 	{
@@ -240,7 +210,7 @@ int fm_write_str(char *flags, char *buffer, int width,
 			goto no_sp;
 		for (; space_pad[j] != '\0'; i++, j++)
 			write_buff[i] = space_pad[j];
-		no_sp:
+no_sp:
 			;
 	}
 	else
@@ -249,7 +219,7 @@ int fm_write_str(char *flags, char *buffer, int width,
 			goto no_sp1;
 		for (; space_pad[j] != '\0'; i++, j++)
 			write_buff[i] = space_pad[j];
-		no_sp1:
+no_sp1:
 			;
 		for (j = 0; dig_buff[j] != '\0'; j++, i++)
 			write_buff[i] = dig_buff[j];
@@ -310,7 +280,7 @@ int fm_write_char(char *flags, char *buffer, int width)
 			goto no_sp;
 		for (; space_pad[j] != '\0'; i++, j++)
 			write_buff[i] = space_pad[j];
-		no_sp:
+no_sp:
 			;
 	}
 	else
@@ -319,54 +289,14 @@ int fm_write_char(char *flags, char *buffer, int width)
 			goto no_sp1;
 		for (; space_pad[j] != '\0'; i++, j++)
 			write_buff[i] = space_pad[j];
-		no_sp1:
+no_sp1:
 			;
 		for (j = 0; dig_buff[j] != '\0'; j++, i++)
 			write_buff[i] = dig_buff[j];
 	}
 	net_len = _strlen(write_buff);
-	write_bytes(write_buff, &net_len);
-	free(space_pad);
-	free(buffer);
-	free(flags);
+	write_bytes(write_buff, &net_len), free(space_pad);
+	free(buffer), free(flags);
 	return (net_len);
 }
 
-int fm_write_hex(char *flags, char *buffer, int width,
-	int precision)
-{
-	return fm_write_int(flags, buffer, width, precision, 0, 1);
-}
-
-int fm_write_octal(char *flags, char *buffer, int width,
-	int precision)
-{
-	return fm_write_int(flags, buffer, width, precision, 1, 0);
-}
-
-int fm_write_addr(char *flags, char *buffer, int width)
-{
-	return (fm_write_str(flags, buffer, width, 0));
-}
-char flag_sign_or_space(int is_signed, int is_force_spaced, int is_force_signed)
-{
-	if (is_force_signed)
-	{
-		if (is_signed)
-			return ('-');
-		else
-			return ('+');
-	}
-	else if (is_force_spaced)/* because only one of these can occur at once */
-	{
-		if (is_signed)
-			return ('-');
-		else
-			return (' ');
-	}
-	else if (is_signed)
-	{
-		return ('-');
-	}
-		return ('\0');
-}

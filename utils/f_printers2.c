@@ -2,6 +2,18 @@
 #include <stdio.h>
 
 
+/**
+  * print_non_print - a function that converts
+	* an input string to an "as-is" string
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_non_print(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
@@ -42,6 +54,18 @@ int print_non_print(va_list va_args, int index, char *flag,
 	return (k);
 }
 
+/**
+  * print_unsigned - a function that formats
+	* an integer string to it's unsigned type
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_unsigned(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {
@@ -75,6 +99,18 @@ int print_unsigned(va_list va_args, int index, char *flag,
 	return (b_len);
 }
 
+/**
+  * print_octal - a function that prints the
+	* octal form of an integer
+  * @va_args: parameter of type va_list .
+  * @index: parameter of type int .
+  * @flag: parameter of type char *.
+  * @width: parameter of type int .
+  * @precision: parameter of type int .
+  * @length: parameter of type int .
+  * @specifier: parameter of type char .
+  * Return: int .
+ */
 int print_octal(va_list va_args, int index, char *flag,
 	int width, int precision, int length, char specifier)
 {

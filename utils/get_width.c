@@ -10,10 +10,9 @@
  * index
  * Return: char **
  **/
-char **get_width (va_list va_args, char *format, int *ind_ptr)
+char **get_width(va_list va_args, char *format, int *ind_ptr)
 {
-	char *status = "1";
-	char **result = NULL, *width_str;
+	char *status = "1", **result = NULL, *width_str;
 	int i = *ind_ptr, j = 0, k = 0, width;
 
 	result  = malloc(2 * sizeof(char *));
@@ -30,10 +29,7 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 	}
 	if (format[*ind_ptr] == '*')
 	{
-			// printf("current index : %d\n", *ind_ptr);
-		width = va_arg(va_args, unsigned long);
-		width_str = itoa(width);
-		// printf("width string : %s\n", width_str);
+		width = va_arg(va_args, unsigned long), width_str = itoa(width);
 		if (width_str == NULL)
 		{
 			*status = '0';
@@ -46,25 +42,17 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 			return (NULL);
 		}
 		for (j = 0; width_str[j] != '\0'; j++)
-		{
 			result[1][j] = width_str[j];
-		}
-		result[0][0] = '1';
-		result[1][j] = '\0';
-		free(width_str);
+		result[0][0] = '1', result[1][j] = '\0', free(width_str);
 	}
 	else
 	{
 		while (is_digit(format[i]))
-		{
-			i++;
-			k++;
-		}
+			i++, k++;
 		result[1] = malloc((k + 1) * sizeof(char));
 		if (result[1] == NULL)
 		{
 			*status = '0';
-			puts("failed allocation at 57");
 			return (NULL);
 		}
 		if (k > 0)
@@ -74,9 +62,7 @@ char **get_width (va_list va_args, char *format, int *ind_ptr)
 		{
 			result[1][j] = format[j + *ind_ptr];
 		}
-		*ind_ptr = i;
-		result[0][0] = '1';
-		result[1][k + 1] = '\0';
+		*ind_ptr = i, result[0][0] = '1', result[1][k + 1] = '\0';
 	}
 	return (result);
 }

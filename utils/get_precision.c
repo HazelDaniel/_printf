@@ -10,7 +10,7 @@
  * index
  * Return: char **
  **/
-char **get_precision (va_list va_args, char *format, int *ind_ptr)
+char **get_precision(va_list va_args, char *format, int *ind_ptr)
 {
 	char *status = "1";
 	char **result = NULL, *precision_str;
@@ -30,14 +30,11 @@ char **get_precision (va_list va_args, char *format, int *ind_ptr)
 	}
 	if (format[i] == '.')
 	{
-		i++;
-		(*ind_ptr)++;
+		i++, (*ind_ptr)++;
 	}
 	else
 	{
-		result[1] = NULL;
-		result[0][0] = *status;
-		result[0][1] = '\0';
+		result[1] = NULL, result[0][0] = *status, result[0][1] = '\0';
 		return (result);
 	}
 	if (format[i] == '*')
@@ -59,16 +56,13 @@ char **get_precision (va_list va_args, char *format, int *ind_ptr)
 		{
 			result[1][j] = precision_str[j];
 		}
-		result[0][0] = '1';
-		result[1][j] = '\0';
-		free(precision_str);
+		result[0][0] = '1', result[1][j] = '\0', free(precision_str);
 	}
 	else
 	{
 		while (is_digit(format[i]))
 		{
-			i++;
-			k++;
+			i++, k++;
 		}
 		result[1] = malloc((k + 1) * sizeof(char));
 		if (result[1] == NULL)
@@ -83,8 +77,7 @@ char **get_precision (va_list va_args, char *format, int *ind_ptr)
 			result[1][j] = format[j + *ind_ptr];
 		}
 		*ind_ptr = i;
-		result[0][0] = '1';
-		result[1][k + 1] = '\0';
+		result[0][0] = '1', result[1][k + 1] = '\0';
 	}
 	return (result);
 }

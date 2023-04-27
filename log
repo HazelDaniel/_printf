@@ -1,0 +1,933 @@
+In file included from cast_utils.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+cc1: all warnings being treated as errors
+In file included from field_utils.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+field_utils.c: In function ‘get_important_flags’:
+field_utils.c:14:34: error: unused variable ‘len’ [-Werror=unused-variable]
+   14 |         int i = 0, j = 0, k = 0, len = _strlen(flags);
+      |                                  ^~~
+cc1: all warnings being treated as errors
+In file included from f_printers1.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+In file included from main.h:4:
+f_printers1.c: In function ‘print_bin’:
+f_printers1.c:23:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 |         next = va_arg(va_args, long long int);
+      |                                     ^~~~
+f_printers1.c:20:28: error: unused variable ‘str_next’ [-Werror=unused-variable]
+   20 |         *p_buffer = NULL, *str_next = NULL;
+      |                            ^~~~~~~~
+f_printers1.c:19:55: error: unused variable ‘pad_string’ [-Werror=unused-variable]
+   19 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |                                                       ^~~~~~~~~~
+f_printers1.c:19:15: error: unused variable ‘flags_net’ [-Werror=unused-variable]
+   19 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |               ^~~~~~~~~
+f_printers1.c:16:36: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   16 | int print_bin(va_list va_args, int index, char *flag,
+      |                                ~~~~^~~~~
+f_printers1.c:17:13: error: unused parameter ‘width’ [-Werror=unused-parameter]
+   17 |         int width, int precision, int length, char specifier)
+      |         ~~~~^~~~~
+f_printers1.c:17:24: error: unused parameter ‘precision’ [-Werror=unused-parameter]
+   17 |         int width, int precision, int length, char specifier)
+      |                    ~~~~^~~~~~~~~
+f_printers1.c:17:39: error: unused parameter ‘length’ [-Werror=unused-parameter]
+   17 |         int width, int precision, int length, char specifier)
+      |                                   ~~~~^~~~~~
+f_printers1.c:17:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   17 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers1.c: In function ‘print_int’:
+f_printers1.c:50:30: error: unused variable ‘i’ [-Werror=unused-variable]
+   50 |         int is_negative = 0, i, j = 0, k = 0;
+      |                              ^
+f_printers1.c:50:13: error: variable ‘is_negative’ set but not used [-Werror=unused-but-set-variable]
+   50 |         int is_negative = 0, i, j = 0, k = 0;
+      |             ^~~~~~~~~~~
+f_printers1.c:47:55: error: unused variable ‘pad_string’ [-Werror=unused-variable]
+   47 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |                                                       ^~~~~~~~~~
+f_printers1.c:44:36: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   44 | int print_int(va_list va_args, int index, char *flag,
+      |                                ~~~~^~~~~
+f_printers1.c:45:53: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   45 |          int width, int precision, int length, char specifier)
+      |                                                ~~~~~^~~~~~~~~
+f_printers1.c: In function ‘print_x_upper’:
+f_printers1.c:105:40: error: unused variable ‘k’ [-Werror=unused-variable]
+  105 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                        ^
+f_printers1.c:105:33: error: unused variable ‘j’ [-Werror=unused-variable]
+  105 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                 ^
+f_printers1.c:105:30: error: unused variable ‘i’ [-Werror=unused-variable]
+  105 |         int is_negative = 0, i, j = 0, k = 0;
+      |                              ^
+f_printers1.c:105:13: error: unused variable ‘is_negative’ [-Werror=unused-variable]
+  105 |         int is_negative = 0, i, j = 0, k = 0;
+      |             ^~~~~~~~~~~
+f_printers1.c:103:10: error: unused variable ‘p_buffer’ [-Werror=unused-variable]
+  103 |         *p_buffer = NULL, *str_next = NULL;
+      |          ^~~~~~~~
+f_printers1.c:102:55: error: unused variable ‘pad_string’ [-Werror=unused-variable]
+  102 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |                                                       ^~~~~~~~~~
+f_printers1.c:99:40: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   99 | int print_x_upper(va_list va_args, int index, char *flag,
+      |                                    ~~~~^~~~~
+f_printers1.c:100:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+  100 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers1.c: In function ‘print_pointer’:
+f_printers1.c:165:54: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+  165 |                 next = va_arg(va_args, unsigned long long int);
+      |                                                      ^~~~
+f_printers1.c:149:40: error: unused variable ‘k’ [-Werror=unused-variable]
+  149 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                        ^
+f_printers1.c:149:33: error: unused variable ‘j’ [-Werror=unused-variable]
+  149 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                 ^
+f_printers1.c:149:30: error: unused variable ‘i’ [-Werror=unused-variable]
+  149 |         int is_negative = 0, i, j = 0, k = 0;
+      |                              ^
+f_printers1.c:149:13: error: unused variable ‘is_negative’ [-Werror=unused-variable]
+  149 |         int is_negative = 0, i, j = 0, k = 0;
+      |             ^~~~~~~~~~~
+f_printers1.c:147:10: error: unused variable ‘p_buffer’ [-Werror=unused-variable]
+  147 |         *p_buffer = NULL, *str_next = NULL;
+      |          ^~~~~~~~
+f_printers1.c:146:55: error: unused variable ‘pad_string’ [-Werror=unused-variable]
+  146 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |                                                       ^~~~~~~~~~
+f_printers1.c:143:40: error: unused parameter ‘index’ [-Werror=unused-parameter]
+  143 | int print_pointer(va_list va_args, int index, char *flag,
+      |                                    ~~~~^~~~~
+f_printers1.c:144:24: error: unused parameter ‘precision’ [-Werror=unused-parameter]
+  144 |         int width, int precision, int length, char specifier)
+      |                    ~~~~^~~~~~~~~
+f_printers1.c:144:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+  144 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from f_printers2.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+f_printers2.c: In function ‘print_non_print’:
+f_printers2.c:21:10: error: unused variable ‘hex_tmp’ [-Werror=unused-variable]
+   21 |         *hex_tmp = NULL, *meg_str[1024];
+      |          ^~~~~~~
+f_printers2.c:20:37: error: unused variable ‘buffer’ [-Werror=unused-variable]
+   20 |         char *next, *np_str = NULL, buffer[1024] = "",
+      |                                     ^~~~~~
+f_printers2.c:17:42: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   17 | int print_non_print(va_list va_args, int index, char *flag,
+      |                                      ~~~~^~~~~
+f_printers2.c:17:55: error: unused parameter ‘flag’ [-Werror=unused-parameter]
+   17 | int print_non_print(va_list va_args, int index, char *flag,
+      |                                                 ~~~~~~^~~~
+f_printers2.c:18:13: error: unused parameter ‘width’ [-Werror=unused-parameter]
+   18 |         int width, int precision, int length, char specifier)
+      |         ~~~~^~~~~
+f_printers2.c:18:24: error: unused parameter ‘precision’ [-Werror=unused-parameter]
+   18 |         int width, int precision, int length, char specifier)
+      |                    ~~~~^~~~~~~~~
+f_printers2.c:18:39: error: unused parameter ‘length’ [-Werror=unused-parameter]
+   18 |         int width, int precision, int length, char specifier)
+      |                                   ~~~~^~~~~~
+f_printers2.c:18:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   18 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers2.c: In function ‘print_unsigned’:
+f_printers2.c:76:18: error: unused variable ‘int_formatted’ [-Werror=unused-variable]
+   76 |         fm_int_t int_formatted;
+      |                  ^~~~~~~~~~~~~
+f_printers2.c:75:40: error: unused variable ‘k’ [-Werror=unused-variable]
+   75 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                        ^
+f_printers2.c:75:33: error: unused variable ‘j’ [-Werror=unused-variable]
+   75 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                 ^
+f_printers2.c:75:30: error: unused variable ‘i’ [-Werror=unused-variable]
+   75 |         int is_negative = 0, i, j = 0, k = 0;
+      |                              ^
+f_printers2.c:75:13: error: unused variable ‘is_negative’ [-Werror=unused-variable]
+   75 |         int is_negative = 0, i, j = 0, k = 0;
+      |             ^~~~~~~~~~~
+f_printers2.c:73:10: error: unused variable ‘p_buffer’ [-Werror=unused-variable]
+   73 |         *p_buffer = NULL, *str_next = NULL;
+      |          ^~~~~~~~
+f_printers2.c:72:55: error: unused variable ‘pad_string’ [-Werror=unused-variable]
+   72 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |                                                       ^~~~~~~~~~
+f_printers2.c:69:41: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   69 | int print_unsigned(va_list va_args, int index, char *flag,
+      |                                     ~~~~^~~~~
+f_printers2.c:70:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   70 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers2.c: In function ‘print_octal’:
+f_printers2.c:119:18: error: unused variable ‘int_formatted’ [-Werror=unused-variable]
+  119 |         fm_int_t int_formatted;
+      |                  ^~~~~~~~~~~~~
+f_printers2.c:114:38: error: unused parameter ‘index’ [-Werror=unused-parameter]
+  114 | int print_octal(va_list va_args, int index, char *flag,
+      |                                  ~~~~^~~~~
+f_printers2.c:115:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+  115 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from f_printers3.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+f_printers3.c: In function ‘print_x_lower’:
+f_printers3.c:23:40: error: unused variable ‘k’ [-Werror=unused-variable]
+   23 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                        ^
+f_printers3.c:23:33: error: unused variable ‘j’ [-Werror=unused-variable]
+   23 |         int is_negative = 0, i, j = 0, k = 0;
+      |                                 ^
+f_printers3.c:23:30: error: unused variable ‘i’ [-Werror=unused-variable]
+   23 |         int is_negative = 0, i, j = 0, k = 0;
+      |                              ^
+f_printers3.c:23:13: error: unused variable ‘is_negative’ [-Werror=unused-variable]
+   23 |         int is_negative = 0, i, j = 0, k = 0;
+      |             ^~~~~~~~~~~
+f_printers3.c:21:10: error: unused variable ‘p_buffer’ [-Werror=unused-variable]
+   21 |         *p_buffer = NULL, *str_next = NULL;
+      |          ^~~~~~~~
+f_printers3.c:20:55: error: unused variable ‘pad_string’ [-Werror=unused-variable]
+   20 |         char *flags_net = get_important_flags(flag), *pad_string = NULL,
+      |                                                       ^~~~~~~~~~
+f_printers3.c:17:40: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   17 | int print_x_lower(va_list va_args, int index, char *flag,
+      |                                    ~~~~^~~~~
+f_printers3.c:18:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   18 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers3.c: In function ‘print_char’:
+f_printers3.c:61:37: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   61 | int print_char(va_list va_args, int index, char *flag,
+      |                                 ~~~~^~~~~
+f_printers3.c:62:24: error: unused parameter ‘precision’ [-Werror=unused-parameter]
+   62 |         int width, int precision, int length, char specifier)
+      |                    ~~~~^~~~~~~~~
+f_printers3.c:62:39: error: unused parameter ‘length’ [-Werror=unused-parameter]
+   62 |         int width, int precision, int length, char specifier)
+      |                                   ~~~~^~~~~~
+f_printers3.c:62:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   62 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers3.c: In function ‘print_string’:
+f_printers3.c:91:39: error: unused parameter ‘index’ [-Werror=unused-parameter]
+   91 | int print_string(va_list va_args, int index, char *flag,
+      |                                   ~~~~^~~~~
+f_printers3.c:92:39: error: unused parameter ‘length’ [-Werror=unused-parameter]
+   92 |         int width, int precision, int length, char specifier)
+      |                                   ~~~~^~~~~~
+f_printers3.c:92:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+   92 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers3.c: In function ‘print_reverse’:
+f_printers3.c:124:40: error: unused parameter ‘index’ [-Werror=unused-parameter]
+  124 | int print_reverse(va_list va_args, int index, char *flag,
+      |                                    ~~~~^~~~~
+f_printers3.c:124:53: error: unused parameter ‘flag’ [-Werror=unused-parameter]
+  124 | int print_reverse(va_list va_args, int index, char *flag,
+      |                                               ~~~~~~^~~~
+f_printers3.c:125:13: error: unused parameter ‘width’ [-Werror=unused-parameter]
+  125 |         int width, int precision, int length, char specifier)
+      |         ~~~~^~~~~
+f_printers3.c:125:24: error: unused parameter ‘precision’ [-Werror=unused-parameter]
+  125 |         int width, int precision, int length, char specifier)
+      |                    ~~~~^~~~~~~~~
+f_printers3.c:125:39: error: unused parameter ‘length’ [-Werror=unused-parameter]
+  125 |         int width, int precision, int length, char specifier)
+      |                                   ~~~~^~~~~~
+f_printers3.c:125:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+  125 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+f_printers3.c: In function ‘print_rot13’:
+f_printers3.c:150:38: error: unused parameter ‘index’ [-Werror=unused-parameter]
+  150 | int print_rot13(va_list va_args, int index, char *flag,
+      |                                  ~~~~^~~~~
+f_printers3.c:150:51: error: unused parameter ‘flag’ [-Werror=unused-parameter]
+  150 | int print_rot13(va_list va_args, int index, char *flag,
+      |                                             ~~~~~~^~~~
+f_printers3.c:151:13: error: unused parameter ‘width’ [-Werror=unused-parameter]
+  151 |         int width, int precision, int length, char specifier)
+      |         ~~~~^~~~~
+f_printers3.c:151:24: error: unused parameter ‘precision’ [-Werror=unused-parameter]
+  151 |         int width, int precision, int length, char specifier)
+      |                    ~~~~^~~~~~~~~
+f_printers3.c:151:39: error: unused parameter ‘length’ [-Werror=unused-parameter]
+  151 |         int width, int precision, int length, char specifier)
+      |                                   ~~~~^~~~~~
+f_printers3.c:151:52: error: unused parameter ‘specifier’ [-Werror=unused-parameter]
+  151 |         int width, int precision, int length, char specifier)
+      |                                               ~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from get_flags.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+get_flags.c: In function ‘get_flags’:
+get_flags.c:19:41: error: unused variable ‘start_index’ [-Werror=unused-variable]
+   19 |         int i = *ind_ptr, j = 0, k = 0, start_index = *ind_ptr;
+      |                                         ^~~~~~~~~~~
+get_flags.c:15:13: error: variable ‘flag_bool’ set but not used [-Werror=unused-but-set-variable]
+   15 |         int flag_bool, flag_index, *flags_h_ret = NULL;
+      |             ^~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from get_length.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+get_length.c: In function ‘get_length’:
+get_length.c:15:47: error: unused variable ‘length_str’ [-Werror=unused-variable]
+   15 |         char *status = "1", **result = NULL, *length_str;
+      |                                               ^~~~~~~~~~
+get_length.c:13:27: error: unused parameter ‘va_args’ [-Werror=unused-parameter]
+   13 | char **get_length(va_list va_args, char *format, int *ind_ptr)
+      |                   ~~~~~~~~^~~~~~~
+cc1: all warnings being treated as errors
+In file included from get_precision.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+cc1: all warnings being treated as errors
+In file included from get_specifier.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+get_specifier.c: In function ‘get_specifier’:
+get_specifier.c:15:47: error: unused variable ‘specifier_str’ [-Werror=unused-variable]
+   15 |         char *status = "1", **result = NULL, *specifier_str;
+      |                                               ^~~~~~~~~~~~~
+get_specifier.c:13:30: error: unused parameter ‘va_args’ [-Werror=unused-parameter]
+   13 | char **get_specifier(va_list va_args, char *format, int *ind_ptr)
+      |                      ~~~~~~~~^~~~~~~
+cc1: all warnings being treated as errors
+In file included from get_width.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+cc1: all warnings being treated as errors
+In file included from handle_print.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+handle_print.c: In function ‘handle_print’:
+handle_print.c:6:20: error: unused variable ‘ind_tmp’ [-Werror=unused-variable]
+    6 |         int i = 0, ind_tmp = index, pr_len = 0;
+      |                    ^~~~~~~
+cc1: all warnings being treated as errors
+In file included from main.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+main.c: In function ‘main’:
+main.c:8:9: error: C++ style comments are not allowed in ISO C90 [-Werror]
+    8 |         // puts("..........................................");
+      |         ^
+main.c:8:9: note: (this will be reported only once per input file)
+main.c:10:31: error: '#' flag used with ‘%d’ gnu_printf format [-Werror=format=]
+   10 |         printf("B. i%#-0 +5.2hd %-*.3dlve everybody\n", 55, 45, 100);
+      |                               ^
+main.c:10:16: error: ' ' flag ignored with '+' flag in gnu_printf format [-Werror=format=]
+   10 |         printf("B. i%#-0 +5.2hd %-*.3dlve everybody\n", 55, 45, 100);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c:10:16: error: '0' flag ignored with '-' flag in gnu_printf format [-Werror=format=]
+main.c:10:16: error: '0' flag ignored with precision and ‘%d’ gnu_printf format [-Werror=format=]
+main.c:13:16: error: too many arguments for format [-Werror=format-extra-args]
+   13 |         printf("C. t%%\n", 55, "string template");
+      |                ^~~~~~~~~~
+main.c:18:17: error: ISO C90 forbids mixed declarations and code [-Werror=declaration-after-statement]
+   18 |                 int len;
+      |                 ^~~
+main.c:34:25: error: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 2 has type ‘unsigned int’ [-Werror=format=]
+   34 |     printf("Unsigned:[%lu]\n", (unsigned int)-3);
+      |                       ~~^      ~~~~~~~~~~~~~~~~
+      |                         |      |
+      |                         |      unsigned int
+      |                         long unsigned int
+      |                       %u
+main.c:56:25: error: ISO C90 forbids mixed declarations and code [-Werror=declaration-after-statement]
+   56 |                         int ch = 9;
+      |                         ^~~
+main.c:56:29: error: unused variable ‘ch’ [-Werror=unused-variable]
+   56 |                         int ch = 9;
+      |                             ^~
+cc1: all warnings being treated as errors
+In file included from _printf.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+_printf.c:3:10: fatal error: utils/uint_to_bin.c: No such file or directory
+    3 | #include "utils/uint_to_bin.c"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+compilation terminated.
+In file included from spec_write_handlers2.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+cc1: all warnings being treated as errors
+In file included from spec_write_handlers.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+spec_write_handlers.c: In function ‘fm_write_int’:
+spec_write_handlers.c:93:38: error: ‘z_pad_num’ may be used uninitialized [-Werror=maybe-uninitialized]
+   93 |                         if (is_octal && !z_pad_num)
+      |                             ~~~~~~~~~^~~~~~~~~~~~~
+spec_write_handlers.c:16:38: note: ‘z_pad_num’ was declared here
+   16 |         int i = 0, j = 0, s_pad_num, z_pad_num;
+      |                                      ^~~~~~~~~
+cc1: all warnings being treated as errors
+In file included from uint_to_bin.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+uint_to_bin.c:10:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   10 | char *uint_to_bin(unsigned long long int dig)
+      |                                 ^~~~
+cc1: all warnings being treated as errors
+In file included from uint_to_hex.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+uint_to_hex.c:12:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | char *uint_to_hex(unsigned long long int dig, char x_case)
+      |                                 ^~~~
+cc1: all warnings being treated as errors
+In file included from uint_to_octal.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+uint_to_octal.c:10:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   10 | char *uint_to_octal(unsigned long long int dig)
+      |                                   ^~~~
+uint_to_octal.c: In function ‘uint_to_octal’:
+uint_to_octal.c:14:23: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   14 |         unsigned long long octal = 0;
+      |                       ^~~~
+uint_to_octal.c:24:56: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 |                 tmp_str[index++] = itoc((unsigned long long int)(dig % 8));
+      |                                                        ^~~~
+uint_to_octal.c:14:28: error: unused variable ‘octal’ [-Werror=unused-variable]
+   14 |         unsigned long long octal = 0;
+      |                            ^~~~~
+cc1: all warnings being treated as errors
+In file included from utils2.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+utils2.c:121:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+  121 | char *prepend_x(unsigned long long dig, char x_case)
+      |                               ^~~~
+cc1: all warnings being treated as errors
+In file included from utils3.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+utils3.c:9:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+    9 | int dig_count(unsigned long long int dig)
+      |                             ^~~~
+utils3.c:29:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   29 | char *itoa(unsigned long long int i)
+      |                          ^~~~
+utils3.c: In function ‘itoa’:
+utils3.c:32:23: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   32 |         unsigned long long int temp = i;
+      |                       ^~~~
+utils3.c: At top level:
+utils3.c:99:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   99 | unsigned long long int get_abs(long long int val)
+      |               ^~~~
+utils3.c:99:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   99 | unsigned long long int get_abs(long long int val)
+      |                                     ^~~~
+cc1: all warnings being treated as errors
+In file included from utils4.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+cc1: all warnings being treated as errors
+In file included from utils.c:1:
+main.h:12:29: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   12 | int dig_count(unsigned long long int dig);
+      |                             ^~~~
+main.h:13:15: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |               ^~~~
+main.h:13:37: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   13 | unsigned long long int get_abs(long long int val);
+      |                                     ^~~~
+main.h:16:26: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   16 | char *itoa(unsigned long long int i);
+      |                          ^~~~
+main.h:21:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   21 | char *uint_to_bin(unsigned long long int x);
+      |                                 ^~~~
+main.h:22:33: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   22 | char *uint_to_hex(unsigned long long int dig, char x_case);
+      |                                 ^~~~
+main.h:23:31: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   23 | char *prepend_x(unsigned long long int dig, char x_case);
+      |                               ^~~~
+main.h:24:35: error: ISO C90 does not support ‘long long’ [-Werror=long-long]
+   24 | char *uint_to_octal(unsigned long long int dig);
+      |                                   ^~~~
+cc1: all warnings being treated as errors
